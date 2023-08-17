@@ -19,8 +19,8 @@ for package in "${PACKAGES[@]}"; do
         echo "$package is installed."
 
         # 서비스 존재 여부 확인
-        if sudo systemctl is-active "$package.service" | grep -q "unknown"; then
-						echo "$package 는 서비스 X "
+        if sudo systemctl is-active "$package" | grep -q "unknown"; then
+                echo "$package 는 서비스 X "
 		    else
 			      # 서비스 시작
             echo "$package 는 서비스 O"
